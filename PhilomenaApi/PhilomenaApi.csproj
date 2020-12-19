@@ -4,8 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
 
+    <!-- https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties -->
     <Title>Philomena API</Title>
-    <PackageDescription>A C# API wrapper for imageboards running Philomena, such as Derpibooru.</PackageDescription>
+    <PackageDescription>A C# API wrapper for interacting with imageboards running Philomena, such as Derpibooru.</PackageDescription>
     <PackageTags>philomena; derpibooru; api; download; image; booru; imageboard; </PackageTags>
     <PackageId>Sibusten.Philomena.Api</PackageId>
     <Version>1.0.0-alpha1</Version>
