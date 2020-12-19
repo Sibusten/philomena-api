@@ -4,3 +4,5 @@ mono: none
 dotnet: 5.0.101
 script:
   - dotnet restore
+  - dotnet build --no-restore
+  - dotnet test --no-build --verbosity normal
