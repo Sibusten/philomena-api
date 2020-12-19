@@ -2,7 +2,26 @@ language: csharp
 solution: PhilomenaApi.sln
 mono: none
 dotnet: 5.0.101
-script:
+
+env:
+  - CONFIGURATION=Debug
+  - CONFIGURATION=Release
+
+install:
   - dotnet restore
-  - dotnet build --no-restore
+
+script:
+  - dotnet build --no-restore -c $CONFIGURATION
+
+after_success:
   - dotnet test --no-build --verbosity normal
+
+before_deploy:
+  - dotnet pack ./PhilomenaApi/PhilomenaApi.csproj -c Release
+
+deploy:
+  on:
+    tags: true
+  skip_cleanup: true
+  provider: script
+  script: dotnet nuget push ./PhilomenaApi/bin/Release/Sibusten.PhilomenaApi.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
