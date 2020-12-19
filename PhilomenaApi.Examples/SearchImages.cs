@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Sibusten.Philomena.Api;
 using Sibusten.Philomena.Api.Models;
 
 namespace Sibusten.Philomena.Api.Examples
