@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Philomena.Api.Examples
+namespace Sibusten.Philomena.Api.Examples
 {
     public class Program
     {

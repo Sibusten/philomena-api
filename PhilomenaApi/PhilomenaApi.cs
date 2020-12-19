@@ -2,10 +2,10 @@ using Flurl;
 using Flurl.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Philomena.Client.Api.Models;
+using Sibusten.Philomena.Api.Models;
 using System;
 
-namespace Philomena.Client.Api
+namespace Sibusten.Philomena.Api
 {
     public class PhilomenaApi : IPhilomenaApi
     {

@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Philomena.Client.Api.Models
+namespace Sibusten.Philomena.Api.Models
 {
     public class ForumModel
     {
