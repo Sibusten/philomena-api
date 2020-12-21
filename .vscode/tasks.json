@@ -37,6 +37,28 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "clean-test-results",
+            "command": "rm",
+            "type": "shell",
+            "args": [
+                "-rf",
+                "PhilomenaApi.tests/TestResults"
+            ]
+        },
+        {
+            "label": "test",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "--collect:\"XPlat Code Coverage\""
+            ],
+            "problemMatcher": "$msCompile",
+            "dependsOn": [
+                "clean-test-results"
+            ]
         }
     ]
 }
