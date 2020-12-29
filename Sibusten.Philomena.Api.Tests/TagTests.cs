@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sibusten.Philomena.Api;
 using Sibusten.Philomena.Api.Models;
 
-namespace Philomena.Api.Tests
+namespace Sibusten.Philomena.Api.Tests
 {
     [TestClass]
     public class TagTests
