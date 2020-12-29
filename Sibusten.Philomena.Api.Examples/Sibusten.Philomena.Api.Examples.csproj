@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\PhilomenaApi\PhilomenaApi.csproj" />
+    <ProjectReference Include="..\Sibusten.Philomena.Api\Sibusten.Philomena.Api.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

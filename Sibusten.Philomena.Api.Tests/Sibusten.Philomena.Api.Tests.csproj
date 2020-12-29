@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PhilomenaApi\PhilomenaApi.csproj" />
+    <ProjectReference Include="..\Sibusten.Philomena.Api\Sibusten.Philomena.Api.csproj" />
   </ItemGroup>
 
 </Project>

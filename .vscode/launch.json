@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/PhilomenaApi.Examples/bin/Debug/net5.0/PhilomenaApi.Examples.dll",
+            "program": "${workspaceFolder}/Sibusten.Philomena.Api.Examples/bin/Debug/net5.0/Sibusten.Philomena.Api.Examples.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
