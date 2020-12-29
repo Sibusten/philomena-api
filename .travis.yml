@@ -25,4 +25,5 @@ deploy:
   on:
     tags: true
   provider: script
+  edge: true
   script: dotnet nuget push ./Sibusten.Philomena.Api/bin/Release/Sibusten.Philomena.Api.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
