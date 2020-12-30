@@ -9,21 +9,19 @@ env:
   - CONFIGURATION=Debug
   - CONFIGURATION=Release
 
-install:
-  - dotnet restore
+jobs:
+  include:
+    - stage: "Build"
+      script: dotnet build -c $CONFIGURATION
 
-script:
-  - dotnet build --no-restore -c $CONFIGURATION
+    - stage: "Test"
+      script: dotnet test --no-build -c $CONFIGURATION
 
-after_success:
-  - dotnet test --no-build --verbosity normal
-
-before_deploy:
-  - dotnet pack ./Sibusten.Philomena.Api/Sibusten.Philomena.Api.csproj -c Release
-
-deploy:
-  on:
-    tags: true
-  provider: script
-  edge: true
-  script: dotnet nuget push ./Sibusten.Philomena.Api/bin/Release/Sibusten.Philomena.Api.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+    - stage: "Deploy"
+      if: branch = main AND tag IS present
+      env: CONFIGURATION=Release  # Only deploy with release configuration
+      script: dotnet pack ./Sibusten.Philomena.Api/Sibusten.Philomena.Api.csproj -c $CONFIGURATION
+      deploy:
+        provider: script
+        edge: true
+        script: dotnet nuget push ./Sibusten.Philomena.Api/bin/$CONFIGURATION/Sibusten.Philomena.Api.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json

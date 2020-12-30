@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 
 ### Changed
 - Restructure project and namespaces
+- Configure build stages
 
 ### Deprecated
 
