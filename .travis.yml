@@ -7,13 +7,9 @@ dist: xenial
 
 # Define reusable jobs
 
-build-job: &build-job
-  stage: "Build"
-  script: dotnet build -c $CONFIGURATION
-
 test-job: &test-job
   stage: "Test"
-  script: dotnet test --no-build -c $CONFIGURATION
+  script: dotnet test -c $CONFIGURATION
 
 deploy-job: &deploy-job
   stage: "Deploy"
@@ -28,11 +24,6 @@ deploy-job: &deploy-job
 
 jobs:
   include:
-    - <<: *build-job
-      env: CONFIGURATION=Debug
-    - <<: *build-job
-      env: CONFIGURATION=Release
-
     - <<: *test-job
       env: CONFIGURATION=Debug
     - <<: *test-job
