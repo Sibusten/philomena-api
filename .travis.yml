@@ -5,23 +5,38 @@ dotnet: 5.0.101
 os: linux
 dist: xenial
 
-env:
-  - CONFIGURATION=Debug
-  - CONFIGURATION=Release
+# Define reusable jobs
+
+build-job: &build-job
+  stage: "Build"
+  script: dotnet build -c $CONFIGURATION
+
+test-job: &test-job
+  stage: "Test"
+  script: dotnet test --no-build -c $CONFIGURATION
+
+deploy-job: &deploy-job
+  stage: "Deploy"
+  if: branch = main AND tag IS present
+  script: dotnet pack ./Sibusten.Philomena.Api/Sibusten.Philomena.Api.csproj -c $CONFIGURATION
+  deploy:
+    provider: script
+    edge: true
+    script: dotnet nuget push ./Sibusten.Philomena.Api/bin/$CONFIGURATION/Sibusten.Philomena.Api.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+
+# Specify jobs to run
 
 jobs:
   include:
-    - stage: "Build"
-      script: dotnet build -c $CONFIGURATION
+    - <<: *build-job
+      env: CONFIGURATION=Debug
+    - <<: *build-job
+      env: CONFIGURATION=Release
 
-    - stage: "Test"
-      script: dotnet test --no-build -c $CONFIGURATION
+    - <<: *test-job
+      env: CONFIGURATION=Debug
+    - <<: *test-job
+      env: CONFIGURATION=Release
 
-    - stage: "Deploy"
-      if: branch = main AND tag IS present
+    - <<: *deploy-job
       env: CONFIGURATION=Release  # Only deploy with release configuration
-      script: dotnet pack ./Sibusten.Philomena.Api/Sibusten.Philomena.Api.csproj -c $CONFIGURATION
-      deploy:
-        provider: script
-        edge: true
-        script: dotnet nuget push ./Sibusten.Philomena.Api/bin/$CONFIGURATION/Sibusten.Philomena.Api.*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
