@@ -88,19 +88,12 @@ namespace Sibusten.Philomena.Api
             _baseUrl = baseUrl;
         }
 
-        public async Task<TagModel> GetTagAsync(string tagSlug)
+        public async Task<TagResponseModel> GetTagAsync(string tagSlug)
         {
-            TagResponseModel tagRoot = await _apiRequest
+            return await _apiRequest
                 .AppendPathSegment("tags")
                 .AppendPathSegment(tagSlug)
                 .GetJsonAsync<TagResponseModel>();
-
-            if (tagRoot.Tag is null)
-            {
-                throw new ArgumentException($"Tag {tagSlug} does not exist");
-            }
-
-            return tagRoot.Tag;
         }
 
         public async Task<ImageSearchModel> SearchImagesAsync(string query, int? page = null, int? perPage = null, SortField? sortField = null, SortDirection? sortDirection = null, int? filterId = null, string? apiKey = null, int? randomSeed = null)

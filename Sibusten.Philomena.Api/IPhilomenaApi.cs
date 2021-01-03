@@ -67,7 +67,7 @@ namespace Sibusten.Philomena.Api
         /// </summary>
         /// <param name="tagSlug">The tag slug to fetch</param>
         /// <returns>The tag response</returns>
-        Task<TagModel> GetTagAsync(string tagSlug);
+        Task<TagResponseModel> GetTagAsync(string tagSlug);
 
         /// <summary>
         /// Fetches a post response for the post ID

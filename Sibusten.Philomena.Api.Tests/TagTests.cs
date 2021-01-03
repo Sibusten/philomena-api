@@ -22,9 +22,10 @@ namespace Sibusten.Philomena.Api.Tests
         {
             _httpTest.RespondWith(_tagJson);
 
-            TagModel tag = await _api.GetTagAsync("safe");
+            TagResponseModel tagResponse = await _api.GetTagAsync("safe");
 
-            Assert.AreEqual("safe", tag.Slug);
+            Assert.IsNotNull(tagResponse.Tag);
+            Assert.AreEqual("safe", tagResponse.Tag.Slug);
         }
 
         /// <summary>
@@ -36,7 +37,10 @@ namespace Sibusten.Philomena.Api.Tests
         {
             _httpTest.RespondWith(_tagJson);
 
-            TagModel tag = await _api.GetTagAsync("safe");
+            TagResponseModel tagResponse = await _api.GetTagAsync("safe");
+
+            Assert.IsNotNull(tagResponse.Tag);
+            TagModel tag = tagResponse.Tag;
 
             Assert.IsNull(tag.AliasedTag);
             Assert.IsTrue(tag.Aliases.Count == 0, "Expected tag to have no aliases");
