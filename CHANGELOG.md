@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 
 ### Added
 - Unit test project
-- Unit tests for SearchTags
+- Unit tests for GetTag
 
 ### Changed
 - Restructure project and namespaces
