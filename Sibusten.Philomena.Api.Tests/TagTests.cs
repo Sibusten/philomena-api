@@ -11,7 +11,7 @@ namespace Sibusten.Philomena.Api.Tests
     [TestClass]
     public class TagTests : TestRoot
     {
-        private const string _tagJson = @"{""tag"":{""aliased_tag"":null,""aliases"":[],""category"":""rating"",""description"":""Pieces of official MLP content, without edits and only reasonable animation loops, are *always* safe.\r\n*Cannot be combined with any other rating.*"",""dnp_entries"":[],""id"":40482,""images"":1624463,""implied_by_tags"":[],""implied_tags"":[],""name"":""safe"",""name_in_namespace"":""safe"",""namespace"":null,""short_description"":""Entirely safe for work and children."",""slug"":""safe"",""spoiler_image_uri"":""https://derpicdn.net/media/2012/07/01/16_01_52_242_safe.png""}}";
+        private const string _tagJson = "{\"tag\":{\"aliased_tag\":null,\"aliases\":[],\"category\":\"rating\",\"description\":\"Pieces of official MLP content, without edits and only reasonable animation loops, are *always* safe.\r\n*Cannot be combined with any other rating.*\",\"dnp_entries\":[],\"id\":40482,\"images\":1624463,\"implied_by_tags\":[],\"implied_tags\":[],\"name\":\"safe\",\"name_in_namespace\":\"safe\",\"namespace\":null,\"short_description\":\"Entirely safe for work and children.\",\"slug\":\"safe\",\"spoiler_image_uri\":\"https://derpicdn.net/media/2012/07/01/16_01_52_242_safe.png\"}}";
 
         /// <summary>
         /// Tests getting a tag that exists
