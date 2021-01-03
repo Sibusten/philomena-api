@@ -260,4 +260,13 @@ namespace Sibusten.Philomena.Api.Models
         [JsonProperty("thumb_tiny")]
         public string? ThumbTiny { get; set; }
     }
+
+    public class ImageResponseModel
+    {
+        [JsonProperty("image")]
+        public ImageModel? Image { get; set; }
+
+        [JsonProperty("interactions")]
+        public List<InteractionModel>? Interactions { get; set; }
+    }
 }

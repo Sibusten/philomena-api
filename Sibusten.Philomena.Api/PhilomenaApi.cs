@@ -130,12 +130,12 @@ namespace Sibusten.Philomena.Api
                 .GetJsonAsync<TagSearchModel>();
         }
 
-        public async Task<ImageModel> GetImage(int imageId, string? apiKey = null)
+        public async Task<ImageResponseModel> GetImage(int imageId, string? apiKey = null)
         {
             return await _apiRequest
                 .AppendPathSegment("images")
                 .AppendPathSegment(imageId)
-                .GetJsonAsync<ImageModel>();
+                .GetJsonAsync<ImageResponseModel>();
         }
     }
 }
