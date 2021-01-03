@@ -3,7 +3,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog] and this project adheres to [Semantic Versioning][Semantic Versioning].
 
+---
+
 ## [Unreleased]
+
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+---
+
+## [1.0.0-alpha2] - 2021-01-03
 
 ### Added
 - API Wrapper for GetImage
@@ -15,20 +33,9 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 - Restructure project and namespaces
 - Configure build stages
 
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
-
 ---
 
-## [Released]
-
-## [v1.0.0-alpha1] - 2020-12-19
+## [1.0.0-alpha1] - 2020-12-19
 
 ### Added
 - API wrappers
@@ -45,6 +52,6 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 [Semantic Versioning]: https://semver.org/
 
 <!-- Versions -->
-[Unreleased]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha1...HEAD
-[Released]: https://github.com/Sibusten/philomena-api/releases
-[v1.0.0-alpha1]: https://github.com/Sibusten/philomena-api/releases/v1.0.0-alpha1
+[Unreleased]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha2...HEAD
+[1.0.0-alpha2]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha1..v1.0.0-alpha2
+[1.0.0-alpha1]: https://github.com/Sibusten/philomena-api/releases/v1.0.0-alpha1
