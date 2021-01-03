@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 ## [Unreleased]
 
 ### Added
+- API Wrapper for GetImage
 - Unit test project
 - Unit tests for GetTag
 
