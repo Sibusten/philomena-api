@@ -46,7 +46,7 @@ namespace Sibusten.Philomena.Api
         /// </summary>
         /// <param name="imageId">The image ID to fetch</param>
         /// <returns>The image response</returns>
-        Task<ImageModel> GetImage(int imageId, string apiKey);
+        Task<ImageModel> GetImage(int imageId, string? apiKey = null);
 
         /// <summary>
         /// Submits a new image. Both key and url are required. Errors will result in an {"errors":image-errors-response}. (TODO)
