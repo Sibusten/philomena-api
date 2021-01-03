@@ -13,7 +13,7 @@ _test_job: &test_job
 
 _deploy_job: &deploy_job
   stage: "Deploy"
-  if: branch = main AND tag IS present
+  if: tag IS present
   script: dotnet pack ./Sibusten.Philomena.Api/Sibusten.Philomena.Api.csproj -c $CONFIGURATION
   deploy:
     provider: script
