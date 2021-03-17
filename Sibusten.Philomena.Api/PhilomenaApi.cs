@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Sibusten.Philomena.Api.Models;
 using System;
+using System.Threading;
 
 namespace Sibusten.Philomena.Api
 {
@@ -88,15 +89,15 @@ namespace Sibusten.Philomena.Api
             _baseUrl = baseUrl;
         }
 
-        public async Task<TagResponseModel> GetTagAsync(string tagSlug)
+        public async Task<TagResponseModel> GetTagAsync(string tagSlug, CancellationToken cancellationToken = default)
         {
             return await _apiRequest
                 .AppendPathSegment("tags")
                 .AppendPathSegment(tagSlug)
-                .GetJsonAsync<TagResponseModel>();
+                .GetJsonAsync<TagResponseModel>(cancellationToken);
         }
 
-        public async Task<ImageSearchModel> SearchImagesAsync(string query, int? page = null, int? perPage = null, SortField? sortField = null, SortDirection? sortDirection = null, int? filterId = null, string? apiKey = null, int? randomSeed = null)
+        public async Task<ImageSearchModel> SearchImagesAsync(string query, int? page = null, int? perPage = null, SortField? sortField = null, SortDirection? sortDirection = null, int? filterId = null, string? apiKey = null, int? randomSeed = null, CancellationToken cancellationToken = default)
         {
             string? sortFieldParamValue = (sortField is null) ? null : GetSortFieldParamValue(sortField.Value, randomSeed);
             string? sortDirectionParamValue = (sortDirection is null) ? null : GetSortDirectionParamValue(sortDirection.Value);
@@ -110,25 +111,25 @@ namespace Sibusten.Philomena.Api
                 .SetQueryParam(_sortDirectionParam, sortDirectionParamValue)
                 .SetQueryParam(_filterIdParam, filterId)
                 .SetQueryParam(_apiKeyParam, apiKey)
-                .GetJsonAsync<ImageSearchModel>();
+                .GetJsonAsync<ImageSearchModel>(cancellationToken);
         }
 
-        public async Task<TagSearchModel> SearchTagsAsync(string query, int? page = null, int? perPage = null)
+        public async Task<TagSearchModel> SearchTagsAsync(string query, int? page = null, int? perPage = null, CancellationToken cancellationToken = default)
         {
             return await _apiRequest
                 .AppendPathSegment("search/tags")
                 .SetQueryParam(_queryParam, query)
                 .SetQueryParam(_pageParam, page)
                 .SetQueryParam(_perPageParam, perPage)
-                .GetJsonAsync<TagSearchModel>();
+                .GetJsonAsync<TagSearchModel>(cancellationToken);
         }
 
-        public async Task<ImageResponseModel> GetImage(int imageId, string? apiKey = null)
+        public async Task<ImageResponseModel> GetImage(int imageId, string? apiKey = null, CancellationToken cancellationToken = default)
         {
             return await _apiRequest
                 .AppendPathSegment("images")
                 .AppendPathSegment(imageId)
-                .GetJsonAsync<ImageResponseModel>();
+                .GetJsonAsync<ImageResponseModel>(cancellationToken);
         }
     }
 }

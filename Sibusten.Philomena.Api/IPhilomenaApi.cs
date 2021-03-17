@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Sibusten.Philomena.Api.Models;
 
@@ -46,7 +47,7 @@ namespace Sibusten.Philomena.Api
         /// </summary>
         /// <param name="imageId">The image ID to fetch</param>
         /// <returns>The image response</returns>
-        Task<ImageResponseModel> GetImage(int imageId, string? apiKey = null);
+        Task<ImageResponseModel> GetImage(int imageId, string? apiKey = null, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Submits a new image. Both key and url are required. Errors will result in an {"errors":image-errors-response}. (TODO)
@@ -67,7 +68,7 @@ namespace Sibusten.Philomena.Api
         /// </summary>
         /// <param name="tagSlug">The tag slug to fetch</param>
         /// <returns>The tag response</returns>
-        Task<TagResponseModel> GetTagAsync(string tagSlug);
+        Task<TagResponseModel> GetTagAsync(string tagSlug, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Fetches a post response for the post ID
@@ -154,7 +155,7 @@ namespace Sibusten.Philomena.Api
         /// <param name="filterId">The filter to use when searching</param>
         /// <param name="apiKey">The user's API key</param>
         /// <returns>A page of images matching the search query</returns>
-        Task<ImageSearchModel> SearchImagesAsync(string query, int? page, int? perPage, SortField? sortField, SortDirection? sortDirection, int? filterId, string? apiKey, int? randomSeed);
+        Task<ImageSearchModel> SearchImagesAsync(string query, int? page, int? perPage, SortField? sortField, SortDirection? sortDirection, int? filterId, string? apiKey, int? randomSeed, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Executes the search given by the query and returns tag responses sorted by descending image count.
@@ -163,7 +164,7 @@ namespace Sibusten.Philomena.Api
         /// <param name="page">The page of tags to fetch</param>
         /// <param name="perPage">How many tags to fetch per page. Maximum of 50.</param>
         /// <returns>A page of tags matching the search query</returns>
-        Task<TagSearchModel> SearchTagsAsync(string query, int? page, int? perPage);
+        Task<TagSearchModel> SearchTagsAsync(string query, int? page, int? perPage, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Returns image responses based on the results of reverse-searching the image given by the url.

@@ -3,23 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog] and this project adheres to [Semantic Versioning][Semantic Versioning].
 
----
-
 ## [Unreleased]
 
 ### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
----
+- Cancellation to API calls
 
 ## [1.0.0-alpha2] - 2021-01-03
 
@@ -33,8 +20,6 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 - Restructure project and namespaces
 - Configure build stages
 
----
-
 ## [1.0.0-alpha1] - 2020-12-19
 
 ### Added
@@ -44,8 +29,6 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
     - GetTag
 - Examples of searching for images and tags
 - CI build and deploy
-
----
 
 <!-- Links -->
 [Keep a Changelog]: https://keepachangelog.com/
