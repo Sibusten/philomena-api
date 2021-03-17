@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 
 ## [Unreleased]
 
+## [1.0.0-alpha3] - 2021-03-16
+
 ### Added
 - Cancellation to API calls
 
@@ -35,6 +37,7 @@ The format is based on [Keep a Changelog][Keep a Changelog] and this project adh
 [Semantic Versioning]: https://semver.org/
 
 <!-- Versions -->
-[Unreleased]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha2...HEAD
+[Unreleased]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha3...HEAD
+[1.0.0-alpha3]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha2..v1.0.0-alpha3
 [1.0.0-alpha2]: https://github.com/Sibusten/philomena-api/compare/v1.0.0-alpha1..v1.0.0-alpha2
 [1.0.0-alpha1]: https://github.com/Sibusten/philomena-api/releases/v1.0.0-alpha1
